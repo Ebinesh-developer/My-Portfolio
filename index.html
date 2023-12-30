@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>My Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Updated: Nov 17 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+  .button {
+    position: relative;
+    width: 200px;
+    height: auto;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+
+  .radio {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  .button a {
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    padding: 20px;
+    background: linear-gradient(90deg, #84fa3b 50%, hsl(207, 98%, 50%) 50%) no-repeat;
+    background-position: right center;
+    background-size: 200% 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .button a:hover,
+  .radio:hover+a {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .button a:active {
+    box-shadow: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+  }
+
+  .open {
+    display: none;
+  }
+
+  .radio:checked~a {
+    animation: loading 5s linear forwards 1;
+  }
+
+  .radio:checked+.download {
+    display: none;
+  }
+
+  .radio:checked~.open {
+    display: block;
+  }
+
+  @keyframes loading {
+    0% {
+      height: 100%;
+      padding: 20px;
+      background-position: right center;
+      color: transparent;
+      box-shadow: none;
+      pointer-events: none;
+    }
+
+    2% {
+      height: 5px;
+      padding: 0 20px;
+      color: transparent;
+      pointer-events: none;
+    }
+
+    95% {
+      height: 5px;
+      padding: 0 20px;
+      background-position: left center;
+      color: transparent;
+      pointer-events: none;
+    }
+
+    100% {
+      height: 100%;
+      padding: 18px 20px;
+      background-position: left center;
+      color: #FFF;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      z-index: 4;
+      pointer-events: auto;
+    }
+  }
+
+
+  .copy {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+  }
+
+
+
+  .right_conatct_social_icon {
+    background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
+  }
+
+  .contact_us {
+    background-color: #f1f1f1;
+    padding: 120px 0px;
+  }
+
+  .contact_inner {
+    background-color: #fff;
+    position: relative;
+    box-shadow: 20px 22px 44px #cccc;
+    border-radius: 25px;
+  }
+
+  .contact_field {
+    padding: 60px 340px 90px 100px;
+  }
+
+  .right_conatct_social_icon {
+    height: 100%;
+  }
+
+  .contact_field h3 {
+    color: #000;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 10px
+  }
+
+  .contact_field p {
+    color: #000;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+  }
+
+  .contact_field .form-control {
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .contact_field .form-control:focus {
+    box-shadow: none;
+    outline: none;
+    border-bottom: 2px solid #1325e8;
+  }
+
+  .contact_field .form-control::placeholder {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .contact_info_sec {
+    position: absolute;
+    background-color: #2d2d2d;
+    right: 1px;
+    top: 6%;
+    height: 340px;
+    width: 340px;
+    padding: 40px;
+    border-radius: 25px 0 0 25px;
+  }
+
+  .contact_info_sec h4 {
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+  }
+
+  .info_single {
+    margin: 30px 0px;
+  }
+
+  .info_single i {
+    margin-right: 15px;
+  }
+
+  .info_single span {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  button.contact_form_submit {
+    background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .socil_item_inner li {
+    list-style: none;
+  }
+
+  .socil_item_inner li a {
+    color: #fff;
+    margin: 0px 15px;
+    font-size: 14px;
+  }
+
+  .socil_item_inner {
+    padding-bottom: 10px;
+  }
+
+  .map_sec {
+    padding: 50px 0px;
+  }
+
+  .map_inner h4,
+  .map_inner p {
+    color: #000;
+    text-align: center
+  }
+
+  .map_inner p {
+    font-size: 13px;
+  }
+
+  .map_bind {
+    margin-top: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+</style>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">EBINESH R</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/ebinesh-r-681264213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://instagram.com/ebi_kutty05?igshid=YmMyMTA2M2Y=" class="instagram"><i
+              class="bx bxl-instagram"></i></a>
+          <a href="https://www.facebook.com/ebinesh.ebinesh.754" class="facebook"><i class="bx bxl-facebook"></i></a>
+
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>EBINESH R</h1>
+      <p>I'm <span class="typed" data-typed-items="Software Engineer"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>I'm Ebinesh from Ooty. I completed my Graduation and Post Graduation at Kongu Arts and Science College in
+            Erode.
+            Presently, I'm thriving as a Full Stack Developer at Industrial Controls and Drives Pvt Ltd in Chennai. I'm
+            deeply passionate about coding and creating streamlined solutions that enhance user experiences. I'm always
+            eager to connect and collaborate with like-minded professionals in the tech industry.
+
+            In both cases, focus on conciseness, relevance, and highlighting what makes you a valuable addition in your
+            field or industry.I excel in leveraging my technical expertise to drive innovative solutions.I am passionate
+            about crafting efficient and user-centric applications.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Full Stack Web Developer.</h3>
+            <p class="fst-italic">
+              I'm working as a Full Stack Developer with over 2 years of experience at Industrial Controls & Drives Pvt
+              Ltd.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>19 April 1999</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 6379745885</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Coonoor</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master of Computer
+                      Applications</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
+                    <span>ebineshrajeshwari@gmail.com</span>
+                  </li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p>
+
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p></p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="progress">
+              <span class="skill">HTML <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">CSS <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">MY SQL <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">SQL Server <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="progress">
+              <span class="skill">Bootstrap <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">C# <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">ASP .Net <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Photoshop <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">Angular <i class="val">50%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>To aspire and work towards a career in challenging environment through development of technical knowledge
+            and honing of inter-personal skills and excellent team spirit.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Master of Computer Applications</h4>
+              <h5>2019 - 2021</h5>
+              <p><em>Kongu Arts & Science College-Erode</em></p>
+              <p></p>
+            </div>
+            <div class="resume-item">
+              <h4>Bachelor of Information Technology</h4>
+              <h5>2016 - 2019</h5>
+              <p><em>Kongu Arts & Science College-Erode</em></p>
+              <p></p>
+            </div>
+            <div class="resume-item">
+              <h4>Higher Secondary Certificate</h4>
+              <h5>2014 - 2016</h5>
+              <p><em>S.R.V Boys Hr.Sec School- Rasipuram</em></p>
+              <p></p>
+            </div>
+            <div class="resume-item">
+              <h4>Secondary School Leaving Certificate</h4>
+              <h5>2013 - 2014</h5>
+              <p><em>Dr.K.J.G Memorial Matriculation School-The Nilgiris</em></p>
+              <p></p>
+            </div>
+
+            <h3 class="resume-title">Personal Profile</h3>
+            <div class="resume-item">
+              <p>Father's Name : N.Ramakrishnan</p>
+            </div>
+            <div class="resume-item">
+              <p>D.O.B : 19-April-1999</p>
+            </div>
+            <div class="resume-item">
+              <p>Age : 24</p>
+            </div>
+            <div class="resume-item">
+              <p>Religion : Hindu</p>
+            </div>
+            <div class="resume-item">
+              <p>Nationality : Indian</p>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Software Engineer</h4>
+              <h5>August 2021 - Present</h5>
+              <p><em>Industrial Controls & Drives Pvt Ltd. Chennai.</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>Energy Management System</h4>
+              <h5>August 2021 - Present</h5>
+              <ul>
+                <li>The Storing Application is utilized to store meter data in the database, encompassing parameters
+                  such as KWH, KVA, KW, Run, HR, and PF, stored in separate tables at one-minute intervals.</li>
+                <li>Customized reports are automatically sent via email to meet customer requirements, while SMS reports
+                  are also dispatched per their needs.</li>
+                <li>Additionally, custom dashboard designs tailored to meet specific customer requirements have been
+                  developed. An SLD (Single Line Diagram) has been designed to display real-time meter values.</li>
+                <li>The application generates automatic Excel reports, organizing them in separate folders based on
+                  individual customer needs.</li>
+                <li>Gauge charts have been meticulously designed to visually represent real-time values.</li>
+                <li>The system includes an Online Trend Graph feature, showcasing real-time values graphically, allowing
+                  users to select parameters for display.</li>
+                <li>Furthermore, a Historical Trend Graph functionality exhibits historical values based on selected
+                  dates and times and chosen parameters.</li>
+                <li>Various reports—Periodic, Shift, Instant, Monthly, 15-Minute, TOD (Time of Day), and Water Flow—are
+                  presented based on parameters specified by the customer.</li>
+                <li>For ease of use, configurations for Shifts, Feeders, Users, and Groups have been implemented. This
+                  user-friendly setup allows for the addition of shift timings, user registrations for login purposes,
+                  and the inclusion of Feeders and their respective Groups.</li>
+                <li>I also analyzed user needs and proposed designs to meet their requirements.</li>
+              </ul>
+              <div class="button">
+                <input type="radio" class="radio">
+                <a class="download" style="color:#FFF">Download My CV</a>
+                <a class="open" href="assets/img/Ebinesh_Resume.pdf" download>Open File</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ====== Contact Section ======= -->
+    <section id="contact" class="contact_us" style="color:white">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <div class="contact_inner">
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="contact_form_inner">
+                    <div class="contact_field">
+                      <h3></h3>
+                      <p></p>
+                      <input type="text" class="form-control form-group" id="nameInput" placeholder="Name" />
+                      <input type="text" class="form-control form-group" id="emailInput" placeholder="Email" />
+                      <textarea class="form-control form-group" id="messageInput" placeholder="Message"></textarea>
+                      <button class="contact_form_submit" id="sendMessageButton">Send</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="right_conatct_social_icon d-flex align-items-end">
+                    <div class="socil_item_inner d-flex">
+                      <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="contact_info_sec">
+                <h4>Contact Info</h4>
+                <div class="d-flex info_single align-items-center">
+                  <i class="bi bi-phone"></i>
+                  <span>+91 6379745885</span>
+                </div>
+                <div class="d-flex info_single align-items-center">
+                  <i class="bi bi-envelope"></i>
+                  <span>ebineshrajeshwari@gmail.com</span>
+                </div>
+                <div class="d-flex info_single align-items-center">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>8/22,Haragatchi Vilage, Melur Post ,The Nilgiris-643221</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Section -->
+
+
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Ebinesh R</span></strong>
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="email.js"></script>
+
+</body>
+
+</html>
